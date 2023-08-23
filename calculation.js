@@ -110,7 +110,7 @@ function calculateTotalPrice(price) {
         document.getElementById('totalPrice-field').textContent = totalPrice;
         calculateDiscountPrice();
         calculateTotalNetPrice();
-        
+
         checkoutApplyButton();
         checkoutPurchaseButton();
 }
@@ -118,20 +118,20 @@ function calculateTotalPrice(price) {
 function calculateDiscountPrice() {
         const couponInput = document.getElementById('coupon-input').value;
         if (totalPrice >= 200 && couponInput === "SELL200") {
-          const discountFloat = totalPrice * 0.2;
-          discount = discountFloat.toFixed(2);
+                const discountFloat = totalPrice * 0.2;
+                discount = discountFloat.toFixed(2);
         } else {
-          discount = 0;
+                discount = 0;
         }
         const discountElement = document.getElementById("discountPrice-field");
         discountElement.textContent = discount;
-      }
+}
 // calculate net price from total
 function calculateTotalNetPrice() {
         const netPrice = totalPrice - discount;
         const totalPriceElement = document.getElementById('netPrice-field');
         totalPriceElement.textContent = netPrice;
-      }
+}
 // activate the purchase button if total price is greater than 0
 function checkoutPurchaseButton() {
         const purchaseButton = document.getElementById('checkoutButton');
@@ -154,7 +154,7 @@ function checkoutApplyButton() {
 document.getElementById("apply-coupon").addEventListener("click", function () {
         calculateDiscountPrice();
         calculateTotalNetPrice();
-      });
+});
 
 //  reload page
 function reloadPage() {
